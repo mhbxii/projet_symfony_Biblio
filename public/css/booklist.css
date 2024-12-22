@@ -1,0 +1,144 @@
+
+.booklist-container {
+    margin-top: 15vh;
+    width: 100%;
+    max-width: 100%;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    padding: 0 1vw 5vw 1vw;
+    overflow: visible;
+}
+
+.booklist-container.blurred {
+    filter: blur(8px); /* Blur the background */
+    pointer-events: none; /* Disable interaction with the blurred container */
+}
+
+.booklist-container .listArticles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+    gap: 1vw;
+    width: 80vw;
+    max-width: 80vw;
+    border-radius: 10px;
+    padding: 0.5vw;
+    position: relative;
+}
+
+.booklist-container .navigationContainer {
+    margin-top: 150px;
+    position: absolute;
+    bottom: -5vh; 
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex; /* Flexbox to align buttons horizontally */
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+  
+  
+.booklist-container .pageIndex {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.booklist-container .pageIndex:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.booklist-container .navigation{
+    height: 5vh;
+    width: 5vh;
+    bottom: -5vh;
+    cursor: pointer;
+    background: white;
+    border-radius: 50%;
+}
+
+.booklist-container .rightBtn, .booklist-container .leftBtn{
+    color: #000;
+    height: 4vh;
+    width: 2vw;
+    background: transparent;
+}
+
+@media all and (max-width: 1500px){
+    .booklist-container .listArticles {
+        grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+        width: 80%;
+        height: max-content;
+    }
+    .booklist-container .container{
+        margin-bottom: 40vh;
+    }
+    .booklist-container .filterDiv{      
+        height: 50vh;
+        width: 25vw;
+    }
+}
+
+@media all and (max-width: 1200px){
+    .booklist-container .listArticles {
+        grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+        width: 80%;
+        height: max-content;
+    }
+    .booklist-container .container{
+        margin-bottom: 50vh;
+    }
+    .booklist-container .filterDiv{
+        height: 50vh;
+        width: 30vw;
+    }
+}
+
+@media all and (max-width: 920px){
+    .booklist-container .listArticles {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        width: 80%;
+        height: max-content;
+    }
+    .booklist-container .container{
+        margin-bottom: 75vh;
+    }
+    .booklist-container .filterDiv{
+        height: 50vh;
+        width: 40vw;
+    }
+}
+@media all and (max-width: 650px){
+    .booklist-container .listArticles {
+        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+        width: 85%;
+        height: max-content;
+    }
+    .booklist-container .container{
+        margin-bottom: 200vh;
+    }
+    .booklist-container .filterDiv{
+        height: 50vh;
+        width: 60vw;
+    }
+}
+@media all and (max-width: 480px){
+    .booklist-container .listArticles {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        width: 80%;
+        height: max-content;
+    }
+    .booklist-container .container{
+        margin-bottom: 510vh;
+    }
+    .booklist-container .filterDiv{
+        height: 50vh;
+        width: 80vw;
+    }
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="body">
+    <div class="form-container">
+        <div class="form-content">
+            <div class="form-left">
+                <form id="signupForm" method="POST" action="{{ path('signup') }}">
+                    <h2>Sign Up!</h2>
+                    <p>Enter your details to continue:</p>
+                    <input type="text" id="username" name="username" placeholder="username">
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="password" id="confirmPassword" name="passwordConfirm" placeholder="Confirm Password">
+                    <input type="text" id="location" name="location" placeholder="location">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone number">
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form> 
+            </div>
+            <div class="form-right">
+                <img src="images/signup.jpg" alt="" class="form-image">
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{ asset('css/signup.css') }}">
+<script src="{{ asset('js/signup.js') }}"></script>
+{% endblock %}

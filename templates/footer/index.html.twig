@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="footer-container">
+        <div class="social">
+            <ul>
+                <li><img class="facebook" src="{{ asset('images/facebook.png') }}"></li>
+                <li><img class="instagram" src="{{ asset('images/instagram.png') }}"></li>
+                <li><img class="whatsapp" src="{{ asset('images/whatsapp.png') }}"></li>
+                <li><img class="twitter" src="{{ asset('images/twitter.png') }}"></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 Biblio. All Rights Reserved.</p>
+    </div>
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}

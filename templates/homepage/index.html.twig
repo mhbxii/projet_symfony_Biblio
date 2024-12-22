@@ -1,0 +1,21 @@
+{# templates/homepage/index.html.twig #}
+{% block body %}
+    {{ navbar|raw }}
+    {{ hero|raw }}
+    <span id="hamburgerBtn" class="humbergerBtn"></span>
+    <div class="filterDiv" id="filterDiv">
+        {{ filter|raw }}
+    </div>
+    {{ booklist|raw }}
+    <p>
+        {{ searchInput|raw }} <br>
+        {{ sortOrder|raw }} <br>
+        {{ selectedCategory|raw }}
+
+    </p>
+    {{ footer|raw }}
+<link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+<script src="{{ asset('js/homepage.js') }}"></script>
+{% endblock %}
+
+

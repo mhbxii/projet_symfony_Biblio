@@ -1,0 +1,47 @@
+
+
+{% block body %}
+<div class="north">
+    <!-- Search Bar -->
+    <form action="/home" method="POST" id="filterForm" data-turbo="false">
+        <div class="searchbar">
+            <input type="text" name="searchInput" id="searchInput" placeholder="search...">
+            <button type="submit" onclick="applyFilter()"></button>
+        </div>
+    </form>
+
+    <!-- Filter Form -->
+    <form action="/home" method="POST" id="filterForm" class="filter" data-turbo="false">
+        <p><strong>Filter :</strong></p>
+
+        <!-- Sort Order -->
+        <select name="sortOrder" id="sortOrder">
+            <option value="" selected>Sort:</option>
+            <option value="+">plus recent</option>
+            <option value="-">moins recent</option>
+        </select>
+
+        <!-- Categories -->
+        <select name="selectedCategory" id="selectedCategory">
+            <option value="">All Categories:</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Ficition">Non-Ficition</option>
+            <option value="Self Dev">Self Dev</option>
+            <option value="Philosofy">Philosofy</option>
+        </select>
+
+        <!-- Buttons -->
+        <div class="btn">
+            <button type="sumbit" onclick="applyFilter()" class="filterBtn">Filter</button>
+            <button type="reset" class="resetBtn" onclick="resetForm()">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function resetForm(){
+        document.getElementById('searchInput').value = "";
+    }
+</script>
+<link rel="stylesheet" href="{{ asset('css/filter.css') }}">
+{% endblock %}

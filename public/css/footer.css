@@ -1,0 +1,93 @@
+.footer-container{
+    height: 15vh;
+    background-color: black;
+    color: #fff;
+}
+
+.footer-container .social{
+    height: 50%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container .social ul{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-container .social ul li{
+    height: 100%;
+    width: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: #fff;
+    padding: 0.5vw 0;
+}
+
+.footer-container .social ul li img{
+    height: 100%;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.footer-container .facebook:hover{
+    background-color: #1877f2;
+}
+
+.footer-container .instagram:hover{  /* Instagram */
+    background: linear-gradient(45deg, #f3f3f3, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.footer-container .whatsapp:hover{  /* WhatsApp */
+    background-color: #25D366; /* WhatsApp Green */
+}
+
+.footer-container .twitter:hover{  /* Twitter */
+    background-color: #1da1f2; /* Twitter Blue */
+}
+
+.footer-container .social ul li img:nth-of-type(4){  /* Twitter */
+    padding-top: 1.5vh;
+}
+
+.footer-container p{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media all and (max-width: 1500px){
+    .footer-container .social ul{
+        width: 20%;
+    }
+}
+
+@media all and (max-width: 1200px){
+    .footer-container .social ul{
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 920px){
+    .footer-container .social ul{
+        width: 40%;
+    }
+}
+@media all and (max-width: 650px){
+    .footer-container .social ul{
+        width: 65%;
+    }
+}
+@media all and (max-width: 420px){
+    .footer-container .social ul{
+        width: 70%;
+    }
+}

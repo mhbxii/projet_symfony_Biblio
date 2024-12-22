@@ -1,0 +1,29 @@
+
+{% block body %}
+{{ navbar|raw }}
+<div class="container">
+  <div class="product-gallery">
+    <img id="mainImage" src="" alt="Main Product Image" class="main-image" />
+  </div>
+
+  <div class="product-details">
+    <h2 id="bookTitle"></h2>
+    <p class="price" id="bookPrice"></p>
+
+    <button type="button" class="add-to-cart-btn" id="buyNowButton">
+      Add To Cart
+    </button>
+    <div class="phoneNumber">
+      <h3>Author:</h3>
+      <p id="bookAuthor"></p>
+    </div>
+    <div class="product-description">
+      <h3>Book Description</h3>
+      <p id="bookDescription"></p>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="{{ asset('css/viewbook.css') }}">
+<script src="{{ asset('js/viewbook.js') }}"></script>
+{% endblock %}
+

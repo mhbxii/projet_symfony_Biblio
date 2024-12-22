@@ -1,0 +1,31 @@
+
+{% block body %}
+<div class="navbar-container">
+  <div class="leftside">
+    <div class="logo">
+      <img src="{{ asset('images/logo-2.png') }}" alt="logo" />
+    </div>
+    <ul>
+      <li onclick="goTo('home')"><img src="{{ asset('images/home.png') }}"/></li>
+      <li onclick="goTo('contact')"><img src="{{ asset('images/contact.png') }}"/></li>
+      <li onclick="goTo('about')"><img src="{{ asset('images/about.png') }}"/></li>
+    </ul>
+  </div>
+
+  <div class="title">
+    <h1>Biblio</h1>
+  </div>
+
+  <div class="rightside">
+    {% if isLoggedIn %}
+      <button type="button" class="addarticle">My Cart</button>
+      <a class="logoutBtn" href="{{ path('logout') }}">Logout</a>
+    {% else %}
+      <button type="button" class="loginBtn" onclick="goToLogin()">Login</button>
+    {% endif %}
+  </div>
+</div>
+
+<script src="{{ asset('js/navbar.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+{% endblock %}

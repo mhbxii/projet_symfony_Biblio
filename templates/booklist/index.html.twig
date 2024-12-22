@@ -1,0 +1,14 @@
+
+
+{% block body %}
+<div class="booklist-container" id="booklist">
+
+    <div class="listArticles">
+        {% for book in books %}
+            {% include 'book/index.html.twig' with {'article': book, 'onclick': 'viewBook(' ~ book|json_encode|raw ~ ')' } %}
+        {% endfor %}
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ asset('css/booklist.css') }}">
+{% endblock %}

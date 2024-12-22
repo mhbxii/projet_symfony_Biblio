@@ -1,0 +1,22 @@
+
+
+{% block body %}
+<div class="book-container" data-book="{{ article | json_encode }}" onclick="viewBook(this)">
+    {% if article %}
+    <div class="img-book-container">
+      <img src="{{ asset('images/books/' ~ article.image) }}" alt="{{ article.title }}" />
+    </div>
+    <div class="below">
+      <p class="price">
+        {{ article.price }} <span style="font-size: 16px; color: rgb(7, 42, 101);">dt</span>
+      </p>
+      <p class="articleName">{{ article.title }}</p>
+      <!--div class="info">
+        <p style="color: rgb(92, 89, 89)"> {{ article.createdBy.name }} </p>
+      </div-->
+    </div>
+  </div>
+  {% endif %}
+<link rel="stylesheet" href="{{ asset('css/book.css') }}">
+<script src="{{ asset('js/book.js') }}"></script>
+{% endblock %}

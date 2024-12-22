@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+{{ navbar|raw }}
+<div class="container">
+    <img src="images/photo.png" alt="">
+    
+    <form action="" method="post">
+        <h1>Contact Us!</h1>
+            <p>
+                <label for="">FullName :</label>
+                <input type="text" id="fullName">
+            </p>
+            <p>
+                <label for="">PhoneNumber :</label>
+                <input type="text" id="phoneNumber">
+            </p>
+            <p>
+                <label for="">Email (optional) :</label>
+                <input type="text" id="email">
+            </p>
+            <p class="ptextarea">
+                <label for="">Message :</label>
+                <textarea id="textArea"></textarea>
+            </p>
+            <button type="submit" (click)="verifInput()">Send</button>
+    </form>
+    <p></p>
+</div>
+<link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+{% endblock %}
