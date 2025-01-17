@@ -7,11 +7,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\BooksRepository;
+use App\Repository\authorsRepository;
 
 class HomepageController extends AbstractController
 {
     #[Route('/home', name: 'home', methods: ['GET', 'POST'])]
-    public function index(AuthService $authService, Request $request): Response
+    public function index(AuthService $authService, Request $request,BooksRepository $repository): Response
     {
         $isFilterVisible = false;
 
@@ -19,32 +21,7 @@ class HomepageController extends AbstractController
         $sortOrder = $request->request->get('sortOrder', '');
         $selectedCategory = $request->request->get('selectedCategory', '');
 
-
-        $book1 = [
-                'id' => 1,
-                'title' => 'Book 1',
-                'description' => 'Description for book 1.',
-                'price' => 10.99,
-                'image' => '0.jpg',
-                'category' => 'Fiction',
-                'publishedAt' => '2024-01-01T10:00:00',
-                'createdBy' => ['id' => 1, 'name' => 'Auth 1'],
-                'country' => 'Tunisia'
-        ];
-        $book2 = [
-                'id' => 2,
-                'title' => 'Book 2',
-                'description' => 'Description for book 2.',
-                'price' => 12.99,
-                'image' => '0.jpg',
-                'category' => 'Fiction',
-                'publishedAt' => '2024-01-01T10:00:00',
-                'createdBy' => ['id' => 1, 'name' => 'Auth 10'],
-                'country' => 'Tunisia'
-        ];
-
-
-        $books = [$book1, $book2, $book1, $book2, $book1, $book2, $book1, $book2];
+        $books = $repository->findAll();
 
 
         return $this->render('homepage/index.html.twig', [
@@ -55,7 +32,7 @@ class HomepageController extends AbstractController
             'booklist' => $this->renderView('booklist/index.html.twig', [
                 'books' => $books,
                 'isFilterVisible' => $isFilterVisible,
-                //'debugValue' => $authService->isLoggedIn(),
+                //'debugValue' => $authService->isLoggedIn(), 
             ]),
             'footer' => $this->renderView('footer/index.html.twig'),
             'filter' => $this->renderView('filter/index.html.twig'),
