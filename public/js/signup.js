@@ -47,7 +47,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     // If everything is valid, submit the form
     if (isValid) {
         // Submit the form if all validation passed
-        alert("mrigl");
         document.getElementById('signupForm').submit();
     }
 });

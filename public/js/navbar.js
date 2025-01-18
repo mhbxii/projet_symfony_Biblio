@@ -27,7 +27,7 @@ function onProfileClick(userId) {
 // Log out
 function logout() {
     localStorage.removeItem('userData');
-    window.location.href = '/home';
+    window.location.href = 'login';
 }
 
 function goTo(url){
