@@ -6,6 +6,7 @@ use App\Repository\AuthorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
+#[ORM\Table(name: "Authors")]
 class Author
 {
     #[ORM\Id]

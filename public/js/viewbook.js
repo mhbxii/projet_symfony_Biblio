@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!book) {
         alert('No book selected!');
-        window.location.href = '/booklist'; // Adjust to your booklist route
+        window.location.href = '/home'; // Adjust to your booklist route
         return;
     }
 
     // Populate the book details
-    document.getElementById('mainImage').src = `/images/books/${book.image || 'default.jpg'}`;
+    document.getElementById('mainImage').src = `/images/books/${book.id  || '0'}.jpg`;
     document.getElementById('mainImage').alt = book.title || 'Book Image';
 
     document.getElementById('bookTitle').textContent = book.title || 'Unknown Title';
     document.getElementById('bookPrice').textContent = `${book.price || '0.00'} TND`; // Customize as needed
-    document.getElementById('bookAuthor').textContent = book.createdBy || 'Unknown Author';
+    document.getElementById('bookAuthor').textContent = book.createdBy.name || 'Unknown Author';
     document.getElementById('bookDescription').textContent = book.description || 'No description available';
 
     // Add event listener for "Add To Cart" button

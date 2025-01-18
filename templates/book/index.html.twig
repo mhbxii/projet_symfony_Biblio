@@ -4,7 +4,7 @@
 <div class="book-container" data-book="{{ article | json_encode }}" onclick="viewBook(this)">
     {% if article %}
     <div class="img-book-container">
-      <img src="{{ asset('images/books/' ~ article.image) }}" alt="{{ article.title }}" />
+      <img src="{{ asset('images/books/' ~ article.id ~ '.jpg') }}" alt="{{ article.title }}" />
     </div>
     <div class="below">
       <p class="price">

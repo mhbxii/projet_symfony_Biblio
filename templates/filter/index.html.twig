@@ -6,7 +6,7 @@
     <form action="/home" method="POST" id="filterForm" data-turbo="false">
         <div class="searchbar">
             <input type="text" name="searchInput" id="searchInput" placeholder="search...">
-            <button type="submit" onclick="applyFilter()"></button>
+            <button type="submit"></button>
         </div>
     </form>
 
@@ -25,14 +25,14 @@
         <select name="selectedCategory" id="selectedCategory">
             <option value="">All Categories:</option>
             <option value="Fiction">Fiction</option>
-            <option value="Non-Ficition">Non-Ficition</option>
+            <option value="Non-Fiction">Non-Ficition</option>
             <option value="Self Dev">Self Dev</option>
             <option value="Philosofy">Philosofy</option>
         </select>
 
         <!-- Buttons -->
         <div class="btn">
-            <button type="sumbit" onclick="applyFilter()" class="filterBtn">Filter</button>
+            <button type="sumbit" class="filterBtn">Filter</button>
             <button type="reset" class="resetBtn" onclick="resetForm()">Reset</button>
         </div>
     </form>

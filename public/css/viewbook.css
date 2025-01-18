@@ -35,8 +35,8 @@
   
   .main-image {
     width: 500px; 
-    height: 400px; 
-    object-fit: cover; 
+    height: 600px; 
+    object-fit: contain; 
     border: 1px solid #ddd; 
     margin-bottom: 15px; 
     border-radius: 8px; 

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'books')]
+#[ORM\Table(name: 'Books')]
 class Book
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column(type: 'integer')]
@@ -29,6 +29,7 @@ class Book
 
     #[ORM\ManyToOne(targetEntity: Author::class)]
     #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(name: "created_by_id", referencedColumnName: "id", nullable: false)]
     private Author $createdBy;
 
     #[ORM\Column(type: 'datetime')]
